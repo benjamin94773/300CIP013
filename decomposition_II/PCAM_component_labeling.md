@@ -41,7 +41,7 @@ Un booleano `changed` combinado con `reduction(|:changed)` indica si hubo al men
 El programa imprime: iteraciones, número de componentes y tiempo en milisegundos. El número de hilos se puede pasar por CLI.
 
 ---
-## Resultados (Ejecución Proporcionada)
+## Resultados
 
 Parámetros de la corrida:
 - Dimensiones: 512 × 512 (N = 262,144 píxeles)
