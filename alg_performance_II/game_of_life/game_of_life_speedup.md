@@ -57,11 +57,6 @@ Observación: A 4 hilos, la versión con tiling supera a la row-wise (Tiled/Row 
 3. Con 4 hilos el tiling sí aventaja (≈10.9% sobre row) indicando que en menor paralelismo la mejora de locality pesa más que el overhead adicional.
 4. La desviación estándar de la versión secuencial (≈3.2% del promedio) muestra variabilidad aceptable; las variantes paralelas son estables (<3% en row, ~2.6% en tiled respecto a sus medias).
 
-## Limitaciones
-- Seeds distintas entre versiones en un mismo run (código original) introducen leve ruido; ideal: usar el mismo estado inicial clonado.
-- Falta de vectorización explícita (no se emplean intrinsics ni `simd`).
-- Falta de medición de uso de CPU / memory bandwidth para correlacionar cuellos de botella.
-
 ## Conclusión
 La paralelización por filas proporciona el mejor tiempo promedio en este escenario (512×512, 200 pasos) con un speedup ≈3.9×. El tiling no supera al enfoque row-wise a 8 hilos, pero a 4 hilos revela ventaja relativa, sugiriendo que el beneficio de locality depende de la presión de concurrencia. El techo de rendimiento observado está dominado por la naturaleza intensiva en memoria del recuento de vecinos; mejoras significativas adicionales requerirían optimizaciones de acceso (packing, vectorización) o algoritmos alternativos.
 
