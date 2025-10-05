@@ -31,18 +31,12 @@ README_RUN.md (guía de ejecución detallada)
 
 ## Requisitos
 - g++ con soporte OpenMP (`-fopenmp`).
-- (Opcional) PowerShell en Windows para usar `build_all.ps1` y `run_examples.ps1`.
 
 ## Compilación
 ### Linux / WSL / Contenedor
 ```bash
 chmod +x build_all.sh
 ./build_all.sh
-```
-
-### Windows (PowerShell)
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build_all.ps1
 ```
 
 Se generan los binarios en `./bin/` (Linux) o en la raíz con sufijo `.exe` (PowerShell). Principales ejecutables:
@@ -65,17 +59,6 @@ Se generan los binarios en `./bin/` (Linux) o en la raíz con sufijo `.exe` (Pow
 export OMP_NUM_THREADS=8
 ./bin/game_of_life 512 512 200 0.3
 ```
-En Windows (PowerShell):
-```powershell
-$env:OMP_NUM_THREADS=8
-./game_of_life.exe 512 512 200 0.3
-```
-
-## Informes Incluidos
-- `decomposition_I/informe.md`: tabla de resultados (a,b,c) para los tres problemas.
-- `decomposition_II/PCAM_component_labeling.md`: análisis PCAM + speedup (1 vs 8 hilos) etiquetado de componentes.
-- `alg_performance_I/amdahl_analysis.md`: resolución completa de los 5 ejercicios de Amdahl (en español).
-- `alg_performance_II/game_of_life/game_of_life_speedup.md`: resultados reales (5 repeticiones) y speedups del Game of Life.
 
 ## Métricas Clave (Resumen Breve)
 - MatVec grande (8000×8000) speedup ~3.3 (8 hilos).
@@ -89,39 +72,6 @@ $env:OMP_NUM_THREADS=8
 for i in {1..5}; do ./bin/game_of_life 512 512 200 0.3 >> gol_runs.txt; done
 grep -E 'Sequential|Row-parallel|Tiled-parallel' gol_runs.txt
 ```
-
-## Qué Subir al Repositorio Git
-Sube TODO el contenido del proyecto excepto binarios generados (los binarios pueden regenerarse). Recomendado añadir un `.gitignore` para excluir:
-```
-bin/
-*.exe
-*.o
-*.out
-*.log
-gol_runs.txt
-```
-
-## Pasos para Publicar en GitHub
-Si el repositorio ya existe remoto (URL proporcionada):
-```bash
-git init               # si aún no hay repositorio local
-git remote add origin https://github.com/benjamin94773/300CIP013.git
-
-# Crear .gitignore si no existe
-printf "bin/\n*.exe\n*.o\n*.out\n*.log\n" > .gitignore
-
-git add .
-git commit -m "Proyecto paralelo: Decomposition I & II + Amdahl + Game of Life speedups"
-git push -u origin main  # o 'master' según rama por defecto del repo
-```
-Si la rama remota es `master`:
-```bash
-git push -u origin master
-```
-
-## Notas
-- Ajustar flags (`-O3 -march=native`) si se buscan métricas máximas de rendimiento locales.
-- Cambiar semillas si se desea uniformidad total entre versiones paralelas.
 
 Fin.
 
