@@ -99,4 +99,3 @@ echo "#include <omp.h>\n#include <iostream>\nint main(){#ifdef _OPENMP std::cout
 g++ -fopenmp test.cpp -o test && ./test
 ```
 
-Listo. Ejecuta y pásame los resultados para ayudarte a redactar el informe.
