@@ -1,0 +1,21 @@
+# Build artifacts
+bin/
+*.exe
+*.o
+*.obj
+*.out
+*.log
+# Temporary run outputs
+gol_512x512_runs.txt
+# Local binaries accidentally committed
+hp_a
+hp_b
+hp_c
+mo_a
+mo_b
+mo_c
+mo_c_opt
+mv_a
+mv_b
+mv_c
+a.out
