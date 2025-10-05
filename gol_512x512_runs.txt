@@ -1,0 +1,20 @@
+Game of Life Performance (512x512, steps=200)
+Sequential ms: 591.977
+Row-parallel ms: 144.932 speedup=4.08451
+Tiled-parallel ms: 143.742 speedup=4.11833
+Game of Life Performance (512x512, steps=200)
+Sequential ms: 559.193
+Row-parallel ms: 142.89 speedup=3.91344
+Tiled-parallel ms: 153.067 speedup=3.65326
+Game of Life Performance (512x512, steps=200)
+Sequential ms: 553.009
+Row-parallel ms: 144.572 speedup=3.82515
+Tiled-parallel ms: 149.785 speedup=3.69202
+Game of Life Performance (512x512, steps=200)
+Sequential ms: 548.717
+Row-parallel ms: 142.955 speedup=3.8384
+Tiled-parallel ms: 147.431 speedup=3.72186
+Game of Life Performance (512x512, steps=200)
+Sequential ms: 549.218
+Row-parallel ms: 140.378 speedup=3.91244
+Tiled-parallel ms: 144.232 speedup=3.80788
