@@ -71,4 +71,3 @@ Speedup(8 hilos) = T_1_hilo / T_8_hilos = 38.9732 / 6.29092 ≈ 6.20
 
 Eficiencia (8 hilos) = 6.20 / 8 ≈ 0.78
 
-Se pueden agregar más filas variando hilos (1,2,4,8,...) o densidad (0.2, 0.5, 0.8) para ampliar la tabla.
