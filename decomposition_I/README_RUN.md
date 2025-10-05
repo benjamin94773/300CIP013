@@ -72,19 +72,6 @@ Archivos en `decomposition_I/matrix_ops/`
   ```
   Salida incluye GFLOPS aproximados de la multiplicación.
 
-## Recolección de Resultados
-Para tu informe guarda (copia/pega o redirige) las salidas:
-```bash
-./mv_a > results_mv_a.txt
-./mv_b 2000 2000 > results_mv_b.txt
-./mv_c 2000 2000 8 > results_mv_c.txt
-# ... y así para los demás
-```
-
-## Sugerencias de Tamaños para Benchmark
-- Matrix-Vector: 1000x1000, 2000x2000, 4000x2000
-- Hot Plate: N=256, 512, 1024 (ajusta max_iters si tarda mucho)
-- Matrix Ops: 200, 300, 400 (cuidado: multiplicación crece O(n^3))
 
 ## Control de Hilos OpenMP
 ```bash
